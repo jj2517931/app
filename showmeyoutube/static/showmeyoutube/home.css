@@ -1,0 +1,36 @@
+body {
+	background-image: url('background.jpg');
+	text-align: center;
+}
+
+iframe {
+	vertical-align: center;
+	border-color: white;
+}
+
+
+
+.white {
+	color: blue;
+}
+
+.thumb {
+	width: 90%;
+	border-color: white;
+	border-width: 5px;
+
+}
+
+.left {
+	text-align: left;
+}
+
+.pad {
+	padding-left: 25px;
+}
+
+.but {
+	line-height: 200%;
+	width: 20px;
+	padding-top: 3px;
+}
