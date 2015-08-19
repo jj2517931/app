@@ -10,7 +10,7 @@ YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
 class Category(models.Model):
-	category_id = models.IntegerField()
+	category_id = models.TextField()
 	name = models.TextField()
 
 class Video(models.Model):
@@ -27,7 +27,6 @@ class Watched(models.Model):
 class Liked(models.Model):
 	user = models.ForeignKey(User)
 	video = models.ForeignKey(Video)
-
 
 class User_Category(models.Model):
 	user = models.ForeignKey(User)
@@ -65,14 +64,20 @@ def add_videos(num):
 		title, category_id = retrieve_video_info(id, youtube)
 		if category_id == None or title == None:
 			continue
+		if category_id == '23':
+			category_id = '34'
 		video_url = "http://www.youtube.com/embed/" + id + "?autoplay=1"
 		thumbnail = "http://img.youtube.com/vi/" + id + "/0.jpg"
+		print category_id
 		category = Category.objects.filter(category_id = category_id)[0]
-		print category.name
 		if not Video.objects.filter(video_id = id):
 			Video.objects.create(name = title, video_id = id, category = category, url = video_url, thumbnail = thumbnail)
 		else:
 			print 'Video already in database........'
+
+def add_categories():
+	for i in categories:
+		Category.objects.create(category_id = str(i), name = categories[i])
 
 # def add_categories():
 # 	for i in categories:
