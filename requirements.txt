@@ -1,3 +1,4 @@
+apiclient==1.0.2
 decorator==4.0.2
 dj-database-url==0.3.0
 dj-static==0.0.6
