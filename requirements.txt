@@ -7,7 +7,7 @@ Django==1.8.4
 django-toolbelt==0.0.1
 google-api-python-client==1.4.1
 gunicorn==19.3.0
-httplib2==0.9.1
+httplib2==0.18.0
 oauth2client==1.4.12
 praw==3.2.1
 psycopg2==2.6.1
